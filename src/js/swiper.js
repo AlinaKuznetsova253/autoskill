@@ -8,12 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     pagination: {
       el: ".swiper-pagination",
     },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    modules: [Navigation, Pagination],
+    modules: [Pagination],
   });
-
-  console.log("hello");
 });
