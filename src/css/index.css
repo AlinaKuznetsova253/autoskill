@@ -2,6 +2,8 @@
 @import "./variables.css";
 @import "./header.css";
 @import "./hero.css";
+@import "./about.css";
+@import "./services.css";
 
 body {
   font-size: 16px;
@@ -77,4 +79,10 @@ h6 {
   width: 100%;
   margin: 0 auto;
   padding: 0 30px;
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 25px;
+  }
 }
