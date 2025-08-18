@@ -5,6 +5,7 @@
 @import "./about.css";
 @import "./services.css";
 @import "./gallery.css";
+@import "./reviews.css";
 
 body {
   font-size: 16px;

@@ -1,0 +1,13 @@
+.reviews {
+  margin-top: 318px;
+  color: var(--text-color);
+  position: relative;
+}
+
+.reviews__title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 64px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}

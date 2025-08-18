@@ -3,3 +3,394 @@
   color: var(--text-color);
   position: relative;
 }
+
+.gallery__content {
+  display: flex;
+  gap: 24px;
+}
+
+.gallery__info {
+  max-width: 727px;
+  width: 100%;
+}
+
+.gallery__text {
+  font-family: var(--main-font);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.text-1 {
+  padding: 60px 0 24px;
+}
+
+.gallery__item {
+  position: relative;
+  width: 100%;
+}
+
+.gallery__img {
+  border-radius: 16px;
+  max-width: 532px;
+  max-height: 397px;
+  width: 100%;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.img-1 {
+  top: 135px;
+  z-index: 3;
+}
+
+.gallery__img-wrapper {
+  position: relative;
+}
+
+.gallery__btn {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.gallery__btn-text {
+  padding-top: 16px;
+  color: var(--accent-secondary-color);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.img-2 {
+  top: 78px;
+  left: 88px;
+  z-index: 2;
+}
+
+.img-3 {
+  left: 166px;
+  z-index: 1;
+}
+
+.gallery__shadow-behind {
+  position: absolute;
+  max-width: 132px;
+  max-height: 392px;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  filter: blur(3.5rem);
+  transform: rotate(-2deg);
+  z-index: -5;
+}
+
+.gallery__shadow__blue {
+  background-color: var(--accent-secondary-color);
+  bottom: -18px;
+  left: -5px;
+}
+
+.gallery__shadow__red {
+  background-color: var(--accent-color);
+  top: -15px;
+  right: 20px;
+}
+
+@media (max-width: 1500px) {
+  .gallery__img {
+    max-width: 482px;
+    max-height: 347px;
+  }
+}
+
+@media (max-width: 1402px) {
+  .gallery__item {
+    top: 70px;
+  }
+  .gallery__img {
+    max-width: 432px;
+    max-height: 297px;
+  }
+  .gallery__shadow-behind {
+    max-height: 297px;
+  }
+  .gallery__shadow__blue {
+    bottom: 130px;
+  }
+  .gallery__shadow__red {
+    top: -5px;
+    right: 55px;
+  }
+}
+
+@media (max-width: 1285px) {
+  .gallery__item {
+    top: 95px;
+  }
+  .gallery__img {
+    max-width: 382px;
+    max-height: 247px;
+  }
+  .gallery__shadow-behind {
+    max-height: 247px;
+    filter: blur(2.5rem);
+  }
+  .gallery__shadow__blue {
+    bottom: 185px;
+  }
+  .gallery__shadow__red {
+    top: 0px;
+    right: 25px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .gallery__shadow__blue {
+    bottom: 205px;
+  }
+}
+
+@media (max-width: 1208px) {
+  .gallery__img {
+    max-width: 302px;
+  }
+  .gallery__shadow__blue {
+    bottom: 250px;
+  }
+  .gallery__shadow__red {
+    right: 55px;
+    top: -15px;
+  }
+}
+
+@media (max-width: 1131px) {
+  .gallery__shadow__blue {
+    bottom: 290px;
+  }
+}
+
+@media (max-width: 1111px) {
+  .gallery__shadow__blue {
+    bottom: 320px;
+  }
+  .gallery__shadow__red {
+    right: 35px;
+    top: -15px;
+  }
+}
+
+@media (max-width: 1057px) {
+  .gallery__shadow__blue {
+    bottom: 350px;
+  }
+  .gallery__shadow__red {
+    right: -10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .gallery {
+    margin-top: 80px;
+  }
+  .gallery__content {
+    gap: 50px;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 54px;
+  }
+  .text-1 {
+    padding: 0 0 10px;
+  }
+  .gallery__item {
+    top: 0px;
+    order: -1;
+    position: relative;
+    width: 100%;
+    max-width: 708px;
+    height: 538px;
+  }
+  .gallery__img {
+    max-width: 540px;
+    max-height: 402px;
+  }
+  .gallery__shadow-behind {
+    max-width: 130px;
+    max-height: 388px;
+  }
+  .gallery__shadow__blue {
+    bottom: 10px;
+  }
+  .gallery__shadow__red {
+    top: -15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .gallery__item {
+    height: 448px;
+  }
+  .gallery__img {
+    max-width: 450px;
+    max-height: 312px;
+  }
+  .gallery__shadow-behind {
+    max-width: 130px;
+    max-height: 312px;
+  }
+  .gallery__shadow__red {
+    right: 35px;
+  }
+}
+
+@media (max-width: 690px) {
+  .gallery__item {
+    height: 398px;
+  }
+  .gallery__img {
+    max-width: 400px;
+    max-height: 262px;
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery__item {
+    height: 388px;
+  }
+  .gallery__img {
+    max-width: 331px;
+    max-height: 259px;
+  }
+  .gallery__shadow-behind {
+    max-height: 247px;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery {
+    margin-top: 40px;
+  }
+  .gallery__content {
+    gap: 30px;
+    padding-top: 20px;
+  }
+  .gallery__item {
+    height: 290px;
+    left: 12%;
+  }
+  .gallery__img {
+    max-width: 281px;
+    max-height: 209px;
+  }
+  .img-1 {
+    top: 70px;
+    z-index: 3;
+  }
+  .gallery__btn-img {
+    max-width: 62px;
+    max-height: 62px;
+  }
+  .gallery__btn-text {
+    padding-top: 8px;
+    font-size: 10px;
+  }
+  .img-2 {
+    top: 40px;
+    left: 46px;
+    z-index: 2;
+  }
+  .img-3 {
+    left: 88px;
+    z-index: 1;
+  }
+  .gallery__shadow__red {
+    right: 110px;
+  }
+}
+
+@media (max-width: 540px) {
+  .gallery__item {
+    left: 8%;
+  }
+  .gallery__shadow__red {
+    right: 85px;
+  }
+}
+
+@media (max-width: 490px) {
+  .gallery__item {
+    left: 5%;
+  }
+  .gallery__shadow__red {
+    right: 35px;
+  }
+}
+
+@media (max-width: 450px) {
+  .gallery__item {
+    left: 0;
+  }
+  .gallery__shadow__red {
+    right: 0;
+  }
+}
+
+@media (max-width: 435px) {
+  .gallery__item {
+    height: 250px;
+  }
+  .gallery__img {
+    max-width: 251px;
+    max-height: 179px;
+  }
+  .gallery__shadow-behind {
+    max-height: 179px;
+  }
+}
+
+@media (max-width: 405px) {
+  .gallery__item {
+    height: 220px;
+  }
+  .gallery__img {
+    max-width: 221px;
+    max-height: 149px;
+  }
+  .gallery__shadow-behind {
+    max-height: 159px;
+  }
+}
+
+@media (max-width: 370px) {
+  .gallery__item {
+    height: 200px;
+  }
+  .gallery__img {
+    max-width: 201px;
+    max-height: 129px;
+  }
+  .gallery__shadow-behind {
+    max-height: 139px;
+  }
+}
+
+@media (max-width: 350px) {
+  .gallery__item {
+    height: 200px;
+  }
+  .gallery__img {
+    max-width: 170px;
+    max-height: 120px;
+  }
+  .gallery__shadow-behind {
+    max-height: 139px;
+  }
+}

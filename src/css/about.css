@@ -5,6 +5,7 @@
 }
 
 .about__title {
+  font-family: var(--secondary-font);
   font-size: 36px;
   font-weight: 700;
   line-height: 64px;
@@ -48,8 +49,10 @@
 }
 
 .about__text {
+  font-family: var(--main-font);
   font-size: 16px;
   font-weight: 400;
+  letter-spacing: 1px;
 }
 
 .about__text-secondary {

@@ -1,5 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap");
 
 :root {
-  --main-font: "Raleway", "Helvetica", sans-serif;
+  --main-font: "AA Stetica", sans-serif;
+  --secondary-font: "RAYDIS", sans-serif;
+}
+
+@font-face {
+  font-family: "AA Stetica";
+  src: url("../fonts/AA Stetica Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AA Stetica";
+  src: url("../fonts/AA Stetica Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RAYDIS";
+  src: url("../fonts/RAYDIS.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
