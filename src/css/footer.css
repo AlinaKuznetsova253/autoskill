@@ -1,0 +1,38 @@
+.footer {
+  margin-top: 140px;
+}
+
+.footer__content {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--main-font);
+  color: var(--text-color);
+  letter-spacing: 1px;
+}
+
+.footer__link {
+  padding-top: 30px;
+  text-decoration: underline;
+}
+
+.footer__info {
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 14px;
+  line-height: 36px;
+}
+
+.footer__item {
+  display: flex;
+  gap: 15px;
+}
+
+.footer__logotype {
+  display: flex;
+  align-items: center;
+}

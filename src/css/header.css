@@ -60,11 +60,11 @@
   transition: fill 0.3s ease;
 }
 
-.icon:hover .icon__img path {
+.contacts__link-info:hover .icon__img path {
   fill: var(--accent-secondary-color);
 }
 
-.icon:active .icon__img path {
+.contacts__link-info:active .icon__img path {
   fill: var(--link-color);
 }
 
