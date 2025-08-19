@@ -10,4 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     modules: [Pagination],
   });
+
+  const swiperReviews = new Swiper(".reviews-swiper", {
+    loop: true,
+    slidesPerView: 2.5,
+    spaceBetween: 24,
+  });
 });

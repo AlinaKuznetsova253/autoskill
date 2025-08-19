@@ -4,10 +4,33 @@
   position: relative;
 }
 
-.reviews__title {
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 64px;
-  letter-spacing: 10px;
-  text-transform: uppercase;
+.reviews__content {
+  padding-top: 94px;
+  overflow: hidden;
+}
+
+.reviews-swiper {
+  width: 100%;
+}
+
+.reviews__item {
+  width: fit-content;
+  font-family: var(--main-font);
+  background-color: var(--text-color);
+  border: 1px var(--text-color);
+  color: var(--main-bg);
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 16px;
+  padding: 40px 46px;
+  box-shadow: 2px 2px 8px var(--accent-secondary-color);
+}
+
+.reviews__grade {
+  display: flex;
+  gap: 12px;
+}
+
+.reviews__text {
+  padding-top: 36px;
 }
