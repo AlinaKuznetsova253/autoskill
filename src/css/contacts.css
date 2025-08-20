@@ -10,10 +10,11 @@
   gap: 24px;
 }
 
-.contacts__map {
-  max-width: 724px;
-  max-height: 540px;
+.map {
+  width: 724px;
+  height: 540px;
   border-radius: 16px;
+  overflow: hidden;
 }
 
 .contacts__info {

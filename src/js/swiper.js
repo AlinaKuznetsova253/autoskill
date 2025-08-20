@@ -13,7 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const swiperReviews = new Swiper(".reviews-swiper", {
     loop: true,
-    slidesPerView: 2.5,
     spaceBetween: 24,
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    modules: [Pagination],
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      1025: {
+        slidesPerView: 2.5,
+      },
+    },
   });
 });

@@ -18,7 +18,7 @@
 }
 
 .footer__info {
-  padding-top: 28px;
+  padding: 28px 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
