@@ -36,3 +36,35 @@
   display: flex;
   align-items: center;
 }
+
+@media (max-width: 1024px) {
+  .footer {
+    margin-top: 80px;
+  }
+  .footer__info {
+    padding: 50px 0 118px;
+    flex-direction: column;
+    gap: 38px;
+  }
+  .footer__info .footer__text:first-child {
+    margin-right: auto;
+    text-align: left;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    margin-top: 50px;
+  }
+  .footer__content {
+    padding-top: 24px;
+  }
+  .footer__link {
+    padding-top: 14px;
+  }
+  .footer__info {
+    padding: 38px 0 146px;
+    flex-direction: column;
+    gap: 50px;
+  }
+}
