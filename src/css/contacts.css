@@ -162,6 +162,16 @@
   .contacts {
     margin-top: 40px;
   }
+  .contacts .container {
+    padding: 0px;
+  }
+  .contacts__name,
+  .contacts__info {
+    padding: 0 25px;
+  }
+  .contacts__shadow {
+    left: 25px;
+  }
   .contacts__content {
     padding-top: 20px;
     gap: 40px;

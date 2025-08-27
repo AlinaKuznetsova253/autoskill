@@ -664,8 +664,8 @@
       </section>
       <section id="contacts" class="contacts">
         <div class="container">
-          <h2 class="about__title">Контакты для связи</h2>
-          <div class="about__shadow"></div>
+          <h2 class="about__title contacts__name">Контакты для связи</h2>
+          <div class="about__shadow contacts__shadow"></div>
           <div class="contacts__content">
             <div id="map" class="map"></div>
             <div class="map__shadow-behind map__shadow__red"></div>
@@ -800,6 +800,45 @@
         </div>
       </footer>
     </main>
+    <section class="modal">
+      <div class="modal__main">
+        <img class="modal__img" src="src/images/logo.svg" alt="Логотип" />
+        <h2 class="modal__title">Оставьте номер — мы перезвоним</h2>
+        <div class="modal__container container">
+          <form class="modal-form">
+            <input
+              type="text"
+              class="phone"
+              name="telephone"
+              placeholder="Введите Ваш телефон"
+              required
+            />
+            <div class="consent">
+              <input
+                type="checkbox"
+                class="consent-input"
+                id="consent"
+                name="consent"
+              />
+              <label class="consent-text" for="consent">
+                Я согласен с политикой обработки персональных данных
+              </label>
+            </div>
+            <button
+              type="submit"
+              class="hero__btn modal__hero-btn"
+              id="submitBtn"
+              disabled
+            >
+              Заказать звонок
+            </button>
+          </form>
+        </div>
+        <button class="modal__close">&#10006;</button>
+        <div class="modal__shadow modal__shadow-blue"></div>
+        <div class="modal__shadow modal__shadow-red"></div>
+      </div>
+    </section>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
     <script type="module" src="/src/js/index.js"></script>
   </body>
