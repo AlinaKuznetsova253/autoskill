@@ -1,0 +1,189 @@
+.services__modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  z-index: 100;
+  cursor: pointer;
+  overflow-y: auto;
+  display: none;
+  z-index: 10;
+}
+
+.services__modal-main {
+  position: relative;
+  max-width: 1470px;
+  height: 90vh;
+  width: 100%;
+  background-color: var(--text-color);
+  margin: auto;
+  color: #0f0f1f;
+  cursor: default;
+  z-index: 2;
+}
+
+.services__modal-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 85px 20px;
+}
+
+.services__modal-title {
+  font-family: var(--secondary-font);
+  color: var(--accent-color);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 64px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+.services__modal-close {
+  background-color: transparent;
+  border: 3px solid #0f0f1f;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  right: 40px;
+  height: fit-content;
+}
+
+.services__modal-container {
+  display: flex;
+  padding: 0 85px 0 85px;
+  gap: 35px;
+}
+
+.services__modal-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.services__modal-img {
+  max-width: 474px;
+  max-height: 522px;
+  border-radius: 16px;
+}
+
+.services__modal-btn {
+  width: 100%;
+}
+
+.services__modal-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.tabs {
+  display: flex;
+  border: 1px solid #f3f5f5;
+  background: #f3f5f5;
+  padding: 8px;
+  border-radius: 10px;
+  gap: 2px;
+}
+
+[class^="tab-btn-"] {
+  font-family: var(--main-font);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #193551;
+  padding: 10px 25px;
+  border: 1px solid #f3f5f5;
+  background: #f3f5f5;
+  cursor: pointer;
+  border-radius: 8px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+[class^="tab-btn-"].active {
+  background: var(--text-color);
+  border-bottom: 1px solid var(--text-color);
+  box-shadow: 0 5px 10px rgba(39, 39, 39, 0.1);
+}
+
+.tab__contents {
+  font-family: var(--main-font);
+}
+
+[class^="tab-content-"] {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  min-height: 450px;
+}
+
+/* Контент, который видим (display: block) — делаем видимым и доступным */
+[class^="tab-content-"][style*="display: block"] {
+  opacity: 1;
+  pointer-events: auto;
+  position: static;
+}
+
+/* Контейнер для контента делаем position: relative, чтобы абсолютное позиционирование не выходило за рамки */
+.tab-contents {
+  position: relative;
+}
+
+.tab__contents-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent-secondary-color);
+  padding-bottom: 12px;
+}
+
+.tab__contents-italic {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  padding-bottom: 32px;
+}
+
+.tab__contents-info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.tab__contents-item {
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 1px;
+}
+
+.tab__contents-article {
+  display: flex;
+  gap: 6px;
+  padding-bottom: 20px;
+}
+
+.tab__contents-text-1 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.tab__contents-text-2 {
+  padding: 0 0 20px 28px;
+}
+
+.tab__contents-text-3 {
+  padding: 0 0 6px 28px;
+}
+
+.tab__contents-list {
+  padding-left: 50px;
+}
+
+.tab__contents-paragraph {
+  list-style: disc;
+}

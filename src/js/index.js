@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalController = ({ modal, btnOpen, btnClose, time = 300 }) => {
     const buttonElems = document.querySelectorAll(btnOpen);
     const modalElem = document.querySelector(modal);
+    const body = document.querySelector("body");
 
     modalElem.style.cssText = `
    display: flex;
@@ -78,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(() => {
           modalElem.style.visibility = "hidden";
+          body.style.overflowY = "inherit"; // Включить скролл страницы
         }, time);
 
         window.removeEventListener("keydown", closeModal);
@@ -87,6 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const openModal = () => {
       modalElem.style.visibility = "visible";
       modalElem.style.opacity = 1;
+      body.style.overflowY = "hidden"; // Выключить скролл страницы
       window.addEventListener("keydown", closeModal);
     };
 
@@ -101,6 +104,55 @@ document.addEventListener("DOMContentLoaded", () => {
     btnOpen: ".hero__btn",
     btnClose: ".modal__close",
   });
+
+  modalController({
+    modal: ".services__modal",
+    btnOpen: ".services__btn",
+    btnClose: ".services__modal-close",
+  });
+
+  modalController({
+    modal: ".gallery__modal",
+    btnOpen: ".gallery__btn",
+    btnClose: ".gallery__modal-close",
+  });
+
+  function initTabs(config) {
+    const tabButtons = document.querySelectorAll(config.buttonClass);
+    const tabContents = document.querySelectorAll(config.contentClass);
+
+    function activateTab(tabIndex) {
+      tabButtons.forEach((btn) => {
+        if (btn.dataset.tab === tabIndex) {
+          btn.classList.add("active");
+        } else {
+          btn.classList.remove("active");
+        }
+      });
+      tabContents.forEach((content) => {
+        if (content.dataset.tabContent === tabIndex) {
+          content.style.display = "block";
+        } else {
+          content.style.display = "none";
+        }
+      });
+    }
+
+    tabButtons.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const tabIndex = this.dataset.tab;
+        activateTab(tabIndex);
+      });
+    });
+
+    if (tabButtons.length > 0) {
+      activateTab(tabButtons[0].dataset.tab);
+    }
+  }
+
+  initTabs({ buttonClass: ".tab-btn-1", contentClass: ".tab-content-1" });
+  initTabs({ buttonClass: ".tab-btn-2", contentClass: ".tab-content-2" });
+  initTabs({ buttonClass: ".tab-btn-3", contentClass: ".tab-content-3" });
 
   const consentCheckbox = document.getElementById("consent");
   const submitBtn = document.getElementById("submitBtn");

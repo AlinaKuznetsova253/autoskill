@@ -9,6 +9,8 @@
 @import "./contacts.css";
 @import "./footer.css";
 @import "./modal.css";
+@import "./services-modal.css";
+@import "./gallery-modal.css";
 
 body {
   font-size: 16px;
