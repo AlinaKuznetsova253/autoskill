@@ -78,6 +78,10 @@
 
 .tabs {
   display: flex;
+}
+
+.tabs-1,
+.tabs-2 {
   border: 1px solid #f3f5f5;
   background: #f3f5f5;
   padding: 8px;
@@ -122,14 +126,12 @@
   min-height: 450px;
 }
 
-/* Контент, который видим (display: block) — делаем видимым и доступным */
 [class^="tab-content-"][style*="display: block"] {
   opacity: 1;
   pointer-events: auto;
   position: static;
 }
 
-/* Контейнер для контента делаем position: relative, чтобы абсолютное позиционирование не выходило за рамки */
 .tab-contents {
   position: relative;
 }
@@ -146,7 +148,7 @@
   font-size: 16px;
   font-weight: 400;
   font-style: italic;
-  padding-bottom: 32px;
+  padding-bottom: 30px;
 }
 
 .tab__contents-info {
@@ -173,10 +175,14 @@
 }
 
 .tab__contents-text-2 {
+  font-size: 18px;
+  font-weight: 500;
   padding: 0 0 20px 28px;
 }
 
 .tab__contents-text-3 {
+  font-size: 18px;
+  font-weight: 500;
   padding: 0 0 6px 28px;
 }
 

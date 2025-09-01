@@ -106,8 +106,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   modalController({
-    modal: ".services__modal",
-    btnOpen: ".services__btn",
+    modal: ".services__modal-1",
+    btnOpen: ".services__btn-1",
+    btnClose: ".services__modal-close",
+  });
+
+  modalController({
+    modal: ".services__modal-2",
+    btnOpen: ".services__btn-2",
+    btnClose: ".services__modal-close",
+  });
+
+  modalController({
+    modal: ".services__modal-3",
+    btnOpen: ".services__btn-3",
     btnClose: ".services__modal-close",
   });
 
