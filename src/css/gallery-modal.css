@@ -46,8 +46,8 @@
   border: 3px solid #0f0f1f;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 20px;
-  height: fit-content;
+  width: 30px;
+  height: 30px;
 }
 
 .gallery__modal-container {
@@ -172,9 +172,6 @@
   }
   .gallery__modal-title {
     font-size: 20px;
-  }
-  .gallery__modal-close {
-    font-size: 14px;
   }
   .gallery__modal-container {
     padding: 0 10px 10px;

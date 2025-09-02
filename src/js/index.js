@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(() => {
           modalElem.style.visibility = "hidden";
-          body.style.overflowY = "inherit"; // Включить скролл страницы
+          body.style.overflowY = "inherit";
         }, time);
 
         window.removeEventListener("keydown", closeModal);
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const openModal = () => {
       modalElem.style.visibility = "visible";
       modalElem.style.opacity = 1;
-      body.style.overflowY = "hidden"; // Выключить скролл страницы
+      body.style.overflowY = "hidden";
       window.addEventListener("keydown", closeModal);
     };
 
@@ -165,6 +165,63 @@ document.addEventListener("DOMContentLoaded", () => {
   initTabs({ buttonClass: ".tab-btn-1", contentClass: ".tab-content-1" });
   initTabs({ buttonClass: ".tab-btn-2", contentClass: ".tab-content-2" });
   initTabs({ buttonClass: ".tab-btn-3", contentClass: ".tab-content-3" });
+
+  function createCustomSelectManager(config) {
+    const selectBlock = document.querySelector(config.selectClass);
+    const selected = selectBlock.querySelector(".selected");
+    const options = selectBlock.querySelector(".options");
+    const optionItems = options.querySelectorAll(".option");
+    const content = document.querySelector(config.contentClass);
+    let currentValue = optionItems[0].getAttribute("data-value");
+
+    function updateContent() {
+      Array.from(content.children).forEach((p) => {
+        if (p.classList.contains("item-" + currentValue)) {
+          p.classList.add("active");
+        } else {
+          p.classList.remove("active");
+        }
+      });
+    }
+
+    selected.textContent = optionItems[0].textContent;
+    updateContent();
+
+    selected.addEventListener("click", () => {
+      options.classList.toggle("open");
+      selected.classList.toggle("active");
+    });
+
+    optionItems.forEach((option) => {
+      option.addEventListener("click", () => {
+        currentValue = option.getAttribute("data-value");
+        selected.textContent = option.textContent;
+        options.classList.remove("open");
+        selected.classList.remove("active");
+        updateContent();
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!selectBlock.contains(e.target)) {
+        options.classList.remove("open");
+        selected.classList.remove("active");
+      }
+    });
+  }
+
+  createCustomSelectManager({
+    selectClass: ".select-1",
+    contentClass: ".content-1",
+  });
+  createCustomSelectManager({
+    selectClass: ".select-2",
+    contentClass: ".content-2",
+  });
+  createCustomSelectManager({
+    selectClass: ".select-3",
+    contentClass: ".content-3",
+  });
 
   const consentCheckbox = document.getElementById("consent");
   const submitBtn = document.getElementById("submitBtn");
