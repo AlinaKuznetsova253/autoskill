@@ -129,98 +129,91 @@ document.addEventListener("DOMContentLoaded", () => {
     btnClose: ".gallery__modal-close",
   });
 
-  function initTabs(config) {
-    const tabButtons = document.querySelectorAll(config.buttonClass);
-    const tabContents = document.querySelectorAll(config.contentClass);
+  function setupTabsSelect({ root, buttonClass, contentClass, selectClass }) {
+    const rootEl = document.querySelector(root);
+    if (!rootEl) return;
 
-    function activateTab(tabIndex) {
-      tabButtons.forEach((btn) => {
-        if (btn.dataset.tab === tabIndex) {
-          btn.classList.add("active");
-        } else {
-          btn.classList.remove("active");
-        }
+    const buttons = Array.from(rootEl.querySelectorAll(buttonClass));
+    const contents = Array.from(rootEl.querySelectorAll(contentClass));
+    const selectEl = rootEl.querySelector(selectClass);
+    if (!buttons.length || !contents.length || !selectEl) return;
+
+    const selected = selectEl.querySelector(".selected");
+    const options = selectEl.querySelector(".options");
+    const optionItems = Array.from(selectEl.querySelectorAll(".option"));
+
+    let current =
+      buttons.find((b) => b.classList.contains("active"))?.dataset.tab ||
+      optionItems[0]?.dataset.value ||
+      "1";
+
+    function show(index) {
+      current = String(index);
+
+      buttons.forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.tab === current);
       });
-      tabContents.forEach((content) => {
-        if (content.dataset.tabContent === tabIndex) {
-          content.style.display = "block";
-        } else {
-          content.style.display = "none";
-        }
+
+      contents.forEach((panel) => {
+        const isActive = panel.dataset.tabContent === current;
+        panel.style.display = isActive ? "block" : "none";
+        panel.classList.toggle("active", isActive);
       });
+
+      const opt =
+        optionItems.find((o) => o.dataset.value === current) || optionItems[0];
+      if (selected && opt) selected.textContent = opt.textContent;
     }
 
-    tabButtons.forEach((btn) => {
-      btn.addEventListener("click", function () {
-        const tabIndex = this.dataset.tab;
-        activateTab(tabIndex);
-      });
+    contents.forEach((c) => (c.style.display = "none"));
+    show(current);
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => show(btn.dataset.tab));
     });
 
-    if (tabButtons.length > 0) {
-      activateTab(tabButtons[0].dataset.tab);
+    if (selected && options) {
+      selected.addEventListener("click", () => {
+        options.classList.toggle("open");
+        selected.classList.toggle("active");
+      });
+
+      optionItems.forEach((opt) => {
+        opt.addEventListener("click", () => {
+          options.classList.remove("open");
+          selected.classList.remove("active");
+          show(opt.dataset.value);
+        });
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!selectEl.contains(e.target)) {
+          options.classList.remove("open");
+          selected.classList.remove("active");
+        }
+      });
     }
   }
 
-  initTabs({ buttonClass: ".tab-btn-1", contentClass: ".tab-content-1" });
-  initTabs({ buttonClass: ".tab-btn-2", contentClass: ".tab-content-2" });
-  initTabs({ buttonClass: ".tab-btn-3", contentClass: ".tab-content-3" });
-
-  function createCustomSelectManager(config) {
-    const selectBlock = document.querySelector(config.selectClass);
-    const selected = selectBlock.querySelector(".selected");
-    const options = selectBlock.querySelector(".options");
-    const optionItems = options.querySelectorAll(".option");
-    const content = document.querySelector(config.contentClass);
-    let currentValue = optionItems[0].getAttribute("data-value");
-
-    function updateContent() {
-      Array.from(content.children).forEach((p) => {
-        if (p.classList.contains("item-" + currentValue)) {
-          p.classList.add("active");
-        } else {
-          p.classList.remove("active");
-        }
-      });
-    }
-
-    selected.textContent = optionItems[0].textContent;
-    updateContent();
-
-    selected.addEventListener("click", () => {
-      options.classList.toggle("open");
-      selected.classList.toggle("active");
-    });
-
-    optionItems.forEach((option) => {
-      option.addEventListener("click", () => {
-        currentValue = option.getAttribute("data-value");
-        selected.textContent = option.textContent;
-        options.classList.remove("open");
-        selected.classList.remove("active");
-        updateContent();
-      });
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!selectBlock.contains(e.target)) {
-        options.classList.remove("open");
-        selected.classList.remove("active");
-      }
-    });
-  }
-
-  createCustomSelectManager({
+  setupTabsSelect({
+    root: ".services__modal-1",
+    buttonClass: ".tab-btn-1",
+    contentClass: ".tab-content-1",
     selectClass: ".select-1",
-    contentClass: ".content-1",
   });
-  createCustomSelectManager({
+
+  setupTabsSelect({
+    root: ".services__modal-2",
+    buttonClass: ".tab-btn-2",
+    contentClass: ".tab-content-2",
     selectClass: ".select-2",
-    contentClass: ".content-2",
   });
-  createCustomSelectManager({
+
+  setupTabsSelect({
+    root: ".services__modal-3",
+    buttonClass: ".tab-btn-3",
+    contentClass: ".tab-content-3",
     selectClass: ".select-3",
-    contentClass: ".content-3",
   });
 
   const consentCheckbox = document.getElementById("consent");
