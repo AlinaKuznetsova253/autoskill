@@ -5,6 +5,7 @@ import "swiper/swiper-bundle.css";
 document.addEventListener("DOMContentLoaded", () => {
   const swiper = new Swiper(".swiper", {
     loop: true,
+    spaceBetween: 270,
     pagination: {
       el: ".swiper-pagination",
     },

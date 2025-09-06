@@ -94,7 +94,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  pointer-events: none;
   backdrop-filter: blur(2px);
 }
 
