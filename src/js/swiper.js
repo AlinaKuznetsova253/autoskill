@@ -1,15 +1,23 @@
 import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 
 document.addEventListener("DOMContentLoaded", () => {
   const swiper = new Swiper(".swiper", {
     loop: true,
-    spaceBetween: 270,
+    spaceBetween: 300,
     pagination: {
       el: ".swiper-pagination",
     },
-    modules: [Pagination],
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+      delay: 10000,
+      disableOnInteraction: false,
+    },
+    modules: [Pagination, Autoplay, Navigation],
   });
 
   const swiperReviews = new Swiper(".reviews-swiper", {
