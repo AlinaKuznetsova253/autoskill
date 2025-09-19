@@ -20,7 +20,7 @@
 .footer__info {
   padding: 28px 0 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   width: 100%;
   font-size: 14px;
@@ -29,6 +29,7 @@
 
 .footer__item {
   display: flex;
+  align-items: center;
   gap: 15px;
 }
 
