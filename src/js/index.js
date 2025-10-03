@@ -129,6 +129,69 @@ document.addEventListener("DOMContentLoaded", () => {
     btnClose: ".gallery__modal-close",
   });
 
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".lightbox__close");
+  const prevBtn = document.querySelector(".lightbox__prev");
+  const nextBtn = document.querySelector(".lightbox__next");
+
+  const images = Array.from(document.querySelectorAll(".gallery__modal-img"));
+  let currentIndex = 0;
+
+  function showImage(index) {
+    lightbox.classList.add("active");
+    currentIndex = index;
+
+    // убираем картинку
+    lightboxImg.classList.remove("show");
+
+    // даём время на fade-out
+    setTimeout(() => {
+      lightboxImg.src = images[index].src;
+    }, 200);
+
+    // ждем загрузку картинки, потом показываем fade-in
+    lightboxImg.onload = () => {
+      lightboxImg.classList.add("show");
+    };
+  }
+
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => showImage(index));
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+    lightboxImg.classList.remove("show");
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+
+  // Закрытие по клику вне картинки
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove("active");
+      lightboxImg.classList.remove("show");
+    }
+  });
+
+  // Управление с клавиатуры
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("active")) return;
+
+    if (e.key === "ArrowLeft") prevBtn.click();
+    if (e.key === "ArrowRight") nextBtn.click();
+    if (e.key === "Escape") closeBtn.click();
+  });
+
   function setupTabsSelect({ root, buttonClass, contentClass, selectClass }) {
     const rootEl = document.querySelector(root);
     if (!rootEl) return;
