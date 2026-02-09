@@ -38,12 +38,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function init() {
     const map = new ymaps.Map("map", {
-      center: [44.956701, 34.089029],
+      center: [44.889869, 34.188362],
       zoom: 14,
       controls: ["zoomControl", "fullscreenControl"],
     });
     const placemark = new ymaps.Placemark(
-      [44.956701, 34.089029],
+      [44.889869, 34.188362],
       {
         balloonContent: "город Симферополь, ул.Вымышленная 52 А",
       },
