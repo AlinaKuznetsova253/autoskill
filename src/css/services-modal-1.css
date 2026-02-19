@@ -400,16 +400,6 @@
       opacity: 1;
     }
   }
-  /* .content-1,
-    .content-2 {
-      display: none;
-      transition: opacity 0.3s;
-    }
-    .content-1 div.active,
-    .content-2 div.active {
-      display: block;
-      opacity: 1;
-    } */
   .services__modal-left {
     margin: 0 auto;
     max-width: 400px;
